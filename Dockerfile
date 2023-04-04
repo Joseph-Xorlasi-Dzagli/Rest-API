@@ -2,7 +2,7 @@
 FROM python:3.8-slim-buster
 
 # Set the working directory to /app
-WORKDIR /voterApp
+WORKDIR /
 
 # Copy the requirements file into the container at /app
 COPY requirements.txt .
@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Copy the current directory contents into the container at /app
-COPY . /voterApp
+COPY . /
 
 # Expose port 5000 for the Flask app
 EXPOSE 5000
